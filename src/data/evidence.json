@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "caseId": "1",
+        "title": "Evidence1",
+        "description": "descripton 1"
+    }, 
+     {
+        "id": "2",
+        "caseId": "1",
+        "title": "Evidence2",
+        "description": "descripton 2"
+    }, 
+     {
+        "id": "3",
+        "caseId": "2",
+        "title": "Evidence3",
+        "description": "descripton 3"
+    }, 
+     {
+        "id": "4",
+        "caseId": "5",
+        "title": "Evidence4",
+        "description": "descripton 4"
+    }, 
+     {
+        "id": "5",
+        "caseId": "3",
+        "title": "Evidence5",
+        "description": "descripton 5"
+    }
+]
