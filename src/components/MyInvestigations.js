@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function MyInvestigations(props) {
+    const navigate = useNavigate();
+
+    const goToCreateCasePage = () => {
+        navigate("/cases");
+    }
 
     return (
         <div>
             <h1>My Investigations</h1>
-            <button onClick={props.addCases}>Add Case</button>
+            <button onClick={goToCreateCasePage}>Add Case</button>
             <ul>
                 {props.cases.map((el) => (
                     <Link to={`/case/${el.id}`}>
