@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateCase(props) {
-    const[title, setTtitle] = useState("");
-    const [description, setDescription] = useState("");
-    console.log(props.addCase);
-      
-   
 
-    const handleSubmit = () => {
+  //todo: title and descripton to states
+  //todo: clean form after submission
+  const navigate = useNavigate();
 
-     
-        setTtitle(document.getElementById("title").value);
-        setDescription(document.getElementById("description").value);
-        const caseItem = {
-            id: "8",
-            title,
-            description
-        }
-        props.addCase(caseItem);
-    }
+  const goToMyInvestigations = () => {
+    navigate("/");
+  };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const caseItem = {
+      id: document.getElementById("title").value, //TODO change
+      title: document.getElementById("title").value,
+      description: document.getElementById("description").value,
+    };
+    
+    props.addCase(caseItem);
+  };
 
   return (
     <div>
@@ -36,6 +36,7 @@ function CreateCase(props) {
         <br></br>
         <input type="submit" value="Create"></input>
       </form>
+      <button onClick={goToMyInvestigations}>My Investigations</button>
     </div>
   );
 }
