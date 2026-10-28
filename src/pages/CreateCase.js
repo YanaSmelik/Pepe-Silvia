@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function CreateCase(props) {
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
   //todo: title and descripton to states
   const navigate = useNavigate();
@@ -13,18 +16,22 @@ function CreateCase(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-     let titleInput = document.getElementById("title").value;
-  let descriptonInput = document.getElementById("description").value;
+    // setTitle(document.getElementById("title").value)
+    //  let title = document.getElementById("title").value;
+    // setDescription(document.getElementById("description").value);
+  // let descriptonInput = document.getElementById("description").value;
     const caseItem = {
       //todo: turn values into states
-      id: titleInput, //TODO change
-      title: titleInput,
-      description: descriptonInput,
+      id: title, //TODO change
+      title: title,
+      description: description,
     };
     
     props.addCase(caseItem);
-    document.getElementById("title").value = ""; 
-    document.getElementById("description").value = "";
+    setTitle("");
+    setDescription("");
+    // document.getElementById("title").value = ""; 
+    // document.getElementById("description").value = "";
   };
 
   return (
@@ -33,11 +40,11 @@ function CreateCase(props) {
       <form onSubmit={handleSubmit}>
         <label forhtml="title">Title:</label>
         <br></br>
-        <input type="text" id="title" name="title"></input>
+        <input type="text" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)}></input>
         <br></br>
         <label forhtml="description">Description:</label>
         <br></br>
-        <input type="text" id="description" name="description"></input>
+        <textarea type="text" id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
         <br></br>
         <br></br>
         <input type="submit" value="Create"></input>
