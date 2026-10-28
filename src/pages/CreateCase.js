@@ -3,22 +3,28 @@ import { useNavigate } from "react-router-dom";
 function CreateCase(props) {
 
   //todo: title and descripton to states
-  //todo: clean form after submission
   const navigate = useNavigate();
 
   const goToMyInvestigations = () => {
     navigate("/");
   };
 
+ 
+
   const handleSubmit = (event) => {
     event.preventDefault();
+     let titleInput = document.getElementById("title").value;
+  let descriptonInput = document.getElementById("description").value;
     const caseItem = {
-      id: document.getElementById("title").value, //TODO change
-      title: document.getElementById("title").value,
-      description: document.getElementById("description").value,
+      //todo: turn values into states
+      id: titleInput, //TODO change
+      title: titleInput,
+      description: descriptonInput,
     };
     
     props.addCase(caseItem);
+    document.getElementById("title").value = ""; 
+    document.getElementById("description").value = "";
   };
 
   return (
