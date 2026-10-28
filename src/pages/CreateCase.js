@@ -16,12 +16,7 @@ function CreateCase(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setTitle(document.getElementById("title").value)
-    //  let title = document.getElementById("title").value;
-    // setDescription(document.getElementById("description").value);
-  // let descriptonInput = document.getElementById("description").value;
     const caseItem = {
-      //todo: turn values into states
       id: title, //TODO change
       title: title,
       description: description,
@@ -30,8 +25,6 @@ function CreateCase(props) {
     props.addCase(caseItem);
     setTitle("");
     setDescription("");
-    // document.getElementById("title").value = ""; 
-    // document.getElementById("description").value = "";
   };
 
   return (

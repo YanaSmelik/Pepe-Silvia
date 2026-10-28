@@ -1,5 +1,4 @@
 import MyInvestigations from "./components/MyInvestigations";
-// import casesData from "./data/cases.json";
 import evidenceData from "./data/evidence.json";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -30,3 +29,5 @@ function App() {
 }
 
 export default App;
+
+//TODO: add Add Evidence functionality to Case page
