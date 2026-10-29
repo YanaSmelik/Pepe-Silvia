@@ -4,16 +4,22 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Case from "./components/Case";
 import CreateCase from "./pages/CreateCase";
+// import Evidence from  "./components/Evidence";
+import CreateEvidence from "./pages/CreateEvidence";
 
 function App() {
   const [cases, setCases] = useState([]);
-  const [evidenceItems] = useState(evidenceData);
+  const [evidenceItems, setEvidenceItems] = useState(evidenceData);
 
   const addCase = (caseItem) => {
-    console.log("ADD CASE Triggered");
-    console.log(cases);
-    console.log(caseItem);
     setCases([caseItem, ...cases]);
+  };
+
+  const addEvidence = (evidence) => {
+    console.log("ADD EVIDENCE Triggered");
+    console.log(evidence);
+    console.log(evidenceItems);
+    setEvidenceItems([evidence, ...evidenceItems]);
   };
 
   return (
@@ -21,9 +27,13 @@ function App() {
       <Route path="/" element={<MyInvestigations cases={cases} />} />
       <Route
         path="/case/:id"
-        element={<Case cases={cases} evidenceItems={evidenceItems} />}
-      />
+        element={<Case cases={cases} evidenceItems={evidenceItems} />}>
+        {/* //todo : change to a + button */}
+          <Route path="" element={<CreateEvidence addEvidence={addEvidence} />} /> 
+          
+        </Route>
       <Route path="cases" element={<CreateCase addCase={addCase} />} />
+      
     </Routes>
   );
 }

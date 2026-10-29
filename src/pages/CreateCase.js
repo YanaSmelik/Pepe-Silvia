@@ -5,7 +5,6 @@ function CreateCase(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
-  //todo: title and descripton to states
   const navigate = useNavigate();
 
   const goToMyInvestigations = () => {

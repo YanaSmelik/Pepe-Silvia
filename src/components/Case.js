@@ -1,4 +1,5 @@
 import {useParams} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function Case(props){
     const {id} = useParams();
@@ -18,6 +19,7 @@ function Case(props){
                     </li>
                 ))}
             </ul>
+            <Outlet />
         </div>
     )
 }
