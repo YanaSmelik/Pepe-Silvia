@@ -16,6 +16,8 @@ function Case(props){
                     <li key={el.id}>
                         <p>{el.title}</p>
                         <p>{el.description}</p>
+                        <p>{el.source.sourceName}</p>
+                        <p>{el.source.sourceReference}</p>
                     </li>
                 ))}
             </ul>

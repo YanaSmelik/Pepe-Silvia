@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 function CreateEvidence(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  let {id} = useParams();
+  const [sourceName, setSourceName] = useState("");
+  const [sourceReference, setSourceReference] = useState("");
+  let { id } = useParams();
 
   const navigate = useNavigate();
 
@@ -20,6 +21,10 @@ function CreateEvidence(props) {
       caseId: id,
       title: title,
       description: description,
+      source: {
+        sourceName: sourceName,
+        sourceReference: sourceReference,
+      },
     };
 
     props.addEvidence(evidence);
@@ -51,6 +56,29 @@ function CreateEvidence(props) {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
         <br></br>
+        <fieldset>
+          <legend>Source:</legend>
+          <label forhtml="sourceName">Name:</label>
+          <input
+            type="text"
+            id="sourceName"
+            name="Name"
+            value={sourceName}
+            onChange={(e) => setSourceName(e.target.value)}
+          ></input>
+          <br></br>
+          <label forhtml="sourceReference">Reference:</label>
+          <input
+            type="text"
+            id="sourceReference"
+            name="sourceReference"
+            value={sourceReference}
+            onChange={(e) => setSourceReference(e.target.value)}
+          ></input>
+        </fieldset>
+        <br></br>
+        <br></br>
+        <br></br>
         <br></br>
         <input type="submit" value="Create"></input>
       </form>
@@ -60,5 +88,3 @@ function CreateEvidence(props) {
 }
 
 export default CreateEvidence;
-
-//TODO add Create evidende as a part of the Case display page.
