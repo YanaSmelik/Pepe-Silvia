@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import evidenceStatuses from "../constants/evidenceStatuses";
+import evidenceTypes from "../constants/evidenceTypes";
 
 function CreateEvidence(props) {
   const [title, setTitle] = useState("");
@@ -8,6 +9,7 @@ function CreateEvidence(props) {
   const [sourceName, setSourceName] = useState("");
   const [sourceReference, setSourceReference] = useState("");
   const [evidenceStatus, setEvidenceStatus] = useState("");
+  const [evidenceType, setEvidenceType] = useState("");
   let { id } = useParams();
 
   const navigate = useNavigate();
@@ -28,6 +30,7 @@ function CreateEvidence(props) {
         sourceReference: sourceReference,
       },
       status: evidenceStatus,
+      type: evidenceType,
     };
 
     props.addEvidence(evidence);
@@ -37,6 +40,10 @@ function CreateEvidence(props) {
 
   const handleStatusChange = (event) => {
     setEvidenceStatus(event.target.value);
+  }
+
+  const handleTypeChange = (event) => {
+    setEvidenceType(event.target.value);
   }
 
   return (
@@ -91,6 +98,11 @@ function CreateEvidence(props) {
           )}
         </select>
         <br></br>
+         <select value={evidenceType} name="evidenceType" id="evidenceType" onChange={handleTypeChange}>
+          {Object.entries(evidenceTypes).map((status) =>
+            <option value={status[1]}>{status[1]}</option>
+          )}
+        </select>
         <br></br>
         <br></br>
         <input type="submit" value="Create"></input>

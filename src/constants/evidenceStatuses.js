@@ -7,5 +7,3 @@ const evidenceStatuses = {
 }
 
 export default evidenceStatuses;
-
-//todo add statuses 

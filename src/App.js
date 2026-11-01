@@ -1,5 +1,4 @@
 import MyInvestigations from "./components/MyInvestigations";
-import evidenceData from "./data/evidence.json";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Case from "./components/Case";
@@ -8,7 +7,7 @@ import CreateEvidence from "./pages/CreateEvidence";
 
 function App() {
   const [cases, setCases] = useState([]);
-  const [evidenceItems, setEvidenceItems] = useState(evidenceData);
+  const [evidenceItems, setEvidenceItems] = useState([]);
 
   const addCase = (caseItem) => {
     setCases([caseItem, ...cases]);
@@ -39,4 +38,5 @@ function App() {
 
 export default App;
 
-//TODO: add Add Evidence functionality to Case page
+//TODO: To create evidence add: tags, attachment, type, notes(?)
+//TODO: type: IMAGE, VIDEO, ARTICLE, DOCUMENT, SOCIAL_POST, AUDIO, MAP

@@ -19,6 +19,7 @@ function Case(props){
                         <p>{el.source.sourceName}</p>
                         <p>{el.source.sourceReference}</p>
                         <p>{el.status}</p>
+                        <p>{el.type}</p>
                     </li>
                 ))}
             </ul>
