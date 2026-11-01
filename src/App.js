@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Case from "./components/Case";
 import CreateCase from "./pages/CreateCase";
-// import Evidence from  "./components/Evidence";
 import CreateEvidence from "./pages/CreateEvidence";
 
 function App() {

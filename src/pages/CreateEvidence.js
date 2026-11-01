@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import evidenceStatuses from "../constants/evidenceStatuses";
 
 function CreateEvidence(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [sourceName, setSourceName] = useState("");
   const [sourceReference, setSourceReference] = useState("");
+  const [evidenceStatus, setEvidenceStatus] = useState("");
   let { id } = useParams();
 
   const navigate = useNavigate();
@@ -25,12 +27,17 @@ function CreateEvidence(props) {
         sourceName: sourceName,
         sourceReference: sourceReference,
       },
+      status: evidenceStatus,
     };
 
     props.addEvidence(evidence);
     setTitle("");
     setDescription("");
   };
+
+  const handleStatusChange = (event) => {
+    setEvidenceStatus(event.target.value);
+  }
 
   return (
     <div>
@@ -76,7 +83,13 @@ function CreateEvidence(props) {
             onChange={(e) => setSourceReference(e.target.value)}
           ></input>
         </fieldset>
+        <label forhtml="evidenceStatus">Evidence status:</label>
         <br></br>
+        <select value={evidenceStatus} name="evidenceStatus" id="evidenceStatus" onChange={handleStatusChange}>
+          {Object.entries(evidenceStatuses).map((status) =>
+            <option value={status[1]}>{status[1]}</option>
+          )}
+        </select>
         <br></br>
         <br></br>
         <br></br>
