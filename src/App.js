@@ -20,8 +20,7 @@ function App() {
 
   const addTag = (tag) => {
     console.log(tags);
-    console.log("ADD TAG TRIGGERED")
-    if (!tags.includes(tag)) {
+    if (!tags.some( item => item.title.toLowerCase() === tag.title.toLowerCase())) {
       setTags([tag, ...tags]);
     }
   };
@@ -45,5 +44,5 @@ export default App;
 
 //TODO: To create evidence add: tags, attachment, notes(?)
 //todo: tags: [] of tags per evidence item, a pool of tags in App
-//todo: tags: created addTag for App, need to send it as prop. Also handle the case where we update (add) tag to the evidence item
-//todo: FIX add tag, list tags functionality
+//todo: tags can be removed 
+// todo: clear evidence form after submit 

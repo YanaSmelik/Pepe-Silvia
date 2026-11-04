@@ -20,6 +20,10 @@ function Case(props){
                         <p>{el.source.sourceReference}</p>
                         <p>{el.status}</p>
                         <p>{el.type}</p>
+                        {/* {el.tags.map(tag => {
+                            <p key={tag.id}>tag.title</p>
+                        })} */}
+                        <ul>{el.tags.map(tag => <li key={tag.title}>{tag.title}</li>)}</ul>
                     </li>
                 ))}
             </ul>

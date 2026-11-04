@@ -21,6 +21,7 @@ function CreateEvidence(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+   const  evidenceTags = props.tags.filter(tag => tag.id === id);
     const evidence = {
       id: title, //TODO change
       caseId: id,
@@ -32,6 +33,7 @@ function CreateEvidence(props) {
       },
       status: evidenceStatus,
       type: evidenceType,
+      tags: evidenceTags,
     };
 
     props.addEvidence(evidence);
@@ -57,8 +59,7 @@ function CreateEvidence(props) {
 
   const listAllTags = () => {
     const evidenceTags = props.tags.filter(tag => tag.id === id);
-    console.log(evidenceTags);
-    evidenceTags.map(tag => <p>{tag.title}</p>);
+   return  evidenceTags.map(tag => <p>{tag.title}</p>);
   }
 
   return (
@@ -128,7 +129,7 @@ function CreateEvidence(props) {
             value={newTag}
             onChange={(e) => setNewTag(e.target.value)}
           ></input>
-          <button onClick={handleAddTag}>Add Tag</button>
+          <button type="button" onClick={handleAddTag}>Add Tag</button>
           <div>{listAllTags()}</div>
         </section>
         <br></br>
