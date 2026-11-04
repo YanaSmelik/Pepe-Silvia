@@ -37,9 +37,19 @@ function CreateEvidence(props) {
     };
 
     props.addEvidence(evidence);
-    setTitle("");
-    setDescription("");
+    resetEvidenceForm();
   };
+
+  const resetEvidenceForm = () => {
+     setTitle("");
+     setDescription("");
+     setDescription("");
+     setSourceName("");
+     setSourceReference("");
+     setEvidenceStatus("");
+     setEvidenceType("");
+     setNewTag("");
+  }
 
   const handleStatusChange = (event) => {
     setEvidenceStatus(event.target.value);
@@ -109,12 +119,14 @@ function CreateEvidence(props) {
         <label forhtml="evidenceStatus">Evidence status:</label>
         <br></br>
         <select value={evidenceStatus} name="evidenceStatus" id="evidenceStatus" onChange={handleStatusChange}>
+           <option value="">--Choose a status--</option>
           {Object.entries(evidenceStatuses).map((status) =>
             <option value={status[1]}>{status[1]}</option>
           )}
         </select>
         <br></br>
          <select value={evidenceType} name="evidenceType" id="evidenceType" onChange={handleTypeChange}>
+         <option value="">--Choose a type--</option>
           {Object.entries(evidenceTypes).map((status) =>
             <option value={status[1]}>{status[1]}</option>
           )}

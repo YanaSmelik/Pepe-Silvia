@@ -45,4 +45,3 @@ export default App;
 //TODO: To create evidence add: tags, attachment, notes(?)
 //todo: tags: [] of tags per evidence item, a pool of tags in App
 //todo: tags can be removed 
-// todo: clear evidence form after submit 
