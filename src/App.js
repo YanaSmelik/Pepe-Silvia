@@ -19,6 +19,8 @@ function App() {
   };
 
   const addTag = (tag) => {
+    console.log(tags);
+    console.log("ADD TAG TRIGGERED")
     if (!tags.includes(tag)) {
       setTags([tag, ...tags]);
     }
@@ -32,7 +34,7 @@ function App() {
         element={<Case cases={cases} evidenceItems={evidenceItems} />}
       >
         {/* //todo : change to a + button */}
-        <Route path="" element={<CreateEvidence addEvidence={addEvidence} />} />
+        <Route path="" element={<CreateEvidence addEvidence={addEvidence} addTag={addTag} tags={tags}/>} />
       </Route>
       <Route path="cases" element={<CreateCase addCase={addCase} />} />
     </Routes>
@@ -44,3 +46,4 @@ export default App;
 //TODO: To create evidence add: tags, attachment, notes(?)
 //todo: tags: [] of tags per evidence item, a pool of tags in App
 //todo: tags: created addTag for App, need to send it as prop. Also handle the case where we update (add) tag to the evidence item
+//todo: FIX add tag, list tags functionality

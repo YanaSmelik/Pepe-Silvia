@@ -10,6 +10,7 @@ function CreateEvidence(props) {
   const [sourceReference, setSourceReference] = useState("");
   const [evidenceStatus, setEvidenceStatus] = useState("");
   const [evidenceType, setEvidenceType] = useState("");
+  const[newTag, setNewTag] = useState("");
   let { id } = useParams();
 
   const navigate = useNavigate();
@@ -44,6 +45,20 @@ function CreateEvidence(props) {
 
   const handleTypeChange = (event) => {
     setEvidenceType(event.target.value);
+  }
+
+   const handleAddTag = (event) => {
+    const tag = {
+      id: id, 
+      title: newTag
+    }
+    props.addTag(tag);
+  }
+
+  const listAllTags = () => {
+    const evidenceTags = props.tags.filter(tag => tag.id === id);
+    console.log(evidenceTags);
+    evidenceTags.map(tag => <p>{tag.title}</p>);
   }
 
   return (
@@ -103,6 +118,19 @@ function CreateEvidence(props) {
             <option value={status[1]}>{status[1]}</option>
           )}
         </select>
+        <br></br>
+        <section>
+           <label forhtml="newTag">New Tag:</label>
+          <input
+            type="text"
+            id="newTag"
+            name="newTag"
+            value={newTag}
+            onChange={(e) => setNewTag(e.target.value)}
+          ></input>
+          <button onClick={handleAddTag}>Add Tag</button>
+          <div>{listAllTags()}</div>
+        </section>
         <br></br>
         <br></br>
         <input type="submit" value="Create"></input>
