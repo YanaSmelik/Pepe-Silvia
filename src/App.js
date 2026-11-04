@@ -19,7 +19,6 @@ function App() {
   };
 
   const addTag = (tag) => {
-    console.log(tags);
     if (!tags.some( item => item.title.toLowerCase() === tag.title.toLowerCase())) {
       setTags([tag, ...tags]);
     }

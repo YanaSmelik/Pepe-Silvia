@@ -48,7 +48,6 @@ function CreateEvidence(props) {
      setSourceReference("");
      setEvidenceStatus("");
      setEvidenceType("");
-     setNewTag("");
   }
 
   const handleStatusChange = (event) => {
@@ -65,6 +64,7 @@ function CreateEvidence(props) {
       title: newTag
     }
     props.addTag(tag);
+    setNewTag("");
   }
 
   const listAllTags = () => {
