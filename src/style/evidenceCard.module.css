@@ -1,0 +1,18 @@
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2em;
+
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 10px;
+    background-color: blueviolet;
+}
+
+.card{
+    display: flex;
+
+    padding: 10px;
+    background-color: aquamarine;
+    border: 1px solid black;
+}
