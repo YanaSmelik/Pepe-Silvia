@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import EvidenceCard from "./EvidenceCard";
+import EvidenceCard from "../components/EvidenceCard";
 
 function Case(props){
     const {id} = useParams();

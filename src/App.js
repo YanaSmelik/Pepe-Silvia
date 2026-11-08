@@ -1,7 +1,7 @@
-import MyInvestigations from "./components/MyInvestigations";
+import MyInvestigations from "./pages/MyInvestigations";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Case from "./components/Case";
+import Case from "./pages/Case";
 import CreateCase from "./pages/CreateCase";
 import CreateEvidence from "./pages/CreateEvidence";
 
