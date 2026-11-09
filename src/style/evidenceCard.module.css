@@ -2,17 +2,35 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 2em;
+    background-color: rgb(83, 114, 132);
 
     justify-content: space-evenly;
     align-content: center;
     padding: 10px;
-    background-color: blueviolet;
+    
 }
 
 .card{
     display: flex;
+    flex-direction: column;
+    background-color: rgba(213, 222, 219, 0.6);
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(65, 94, 111);
+    font-family: "Urbanist", sans-serif;
 
     padding: 10px;
-    background-color: aquamarine;
-    border: 1px solid black;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.description{
+    font-weight: 250;
+    text-align: justify;
+    max-height: 60px;
+
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
