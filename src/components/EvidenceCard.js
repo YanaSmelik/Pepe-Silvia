@@ -2,12 +2,12 @@ import styles from "../style/evidenceCard.module.css";
 
 function EvidenceCard(props) {
  const statusStyleClasses = {
-      "Verified": styles.verified,
-      "Unverified": styles.unverified,
-        "Partially verified": styles.partiallyVerified,
-       "False": styles.false,
-        "Disputed": styles.disputed,
-  } //TODO: fix values
+     "Verified": styles.Verified,
+      "Unverified": styles.Unverified,
+        "Partially verified": styles.PartiallyVerified,
+       "False": styles.False,
+        "Disputed": styles.Disputed,
+  } //TODO: fix style names, from small letter
 
 
   return (

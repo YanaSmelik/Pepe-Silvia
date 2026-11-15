@@ -27,7 +27,7 @@
   padding: 10px;
 }
 
-.header{
+.header {
   display: inline-flex;
   justify-content: space-between;
 }
@@ -44,8 +44,21 @@
   border-radius: 10px;
 }
 
-.Unverified{
-   background-color: brown;
+.Unverified {
+  background-color: rgba(102, 122, 134, 0.6);
+}
+
+.Verified {
+  background-color: rgba(19, 103, 71, 0.6);
+}
+.PartiallyVerified {
+  background-color: rgba(200, 129, 39, 0.6);
+}
+.False {
+  background-color: rgba(140, 69, 70, 0.6);
+}
+.Disputed {
+  background-color: rgba(50, 93, 136, 0.6);
 }
 
 .descriptionContainer {
