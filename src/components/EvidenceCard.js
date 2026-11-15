@@ -23,9 +23,11 @@ function EvidenceCard(props) {
           <div className={styles.descriptionContainer}>
             <p className={styles.description}>{el.description}</p>
           </div>
-          <p>{el.source.sourceName}</p>
-          <p>{el.source.sourceReference}</p>
-
+          <div className={styles.source}>
+          <h4>Source:</h4>
+          <p><span>Name:</span> {el.source.sourceName}</p>
+          <p><span>Reference:</span> {el.source.sourceReference}</p>
+</div>
           <p>{el.type}</p>
           <ul>
             {el.tags.map((tag) => (

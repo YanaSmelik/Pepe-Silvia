@@ -78,3 +78,17 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.source span {
+    font-weight: 500;
+}
+
+.source p {
+    margin: 0;
+    padding: 5px;
+}
+
+.source h4 {
+    margin: 0;
+    padding-top: 1rem;
+}
