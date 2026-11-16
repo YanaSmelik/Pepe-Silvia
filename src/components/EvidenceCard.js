@@ -1,4 +1,11 @@
 import styles from "../style/evidenceCard.module.css";
+import image from "../media/icons/image.svg";
+import video from  "../media/icons/video.svg";
+import article from  "../media/icons/article.svg";
+import document from "../media/icons/document.svg";
+import socialPost from "../media/icons/socialmedia.svg";
+import audio from  "../media/icons/audio.svg";
+import map from "../media/icons/map.svg";
 
 function EvidenceCard(props) {
   const statusStyleClasses = {
@@ -8,6 +15,16 @@ function EvidenceCard(props) {
     False: styles.False,
     Disputed: styles.Disputed,
   }; //TODO: fix style names, from small letter
+
+    const typeIconsSrc = {
+        "Image": image,
+        "Video":video,
+        "Article": article,
+        "Document": document,
+        "Social post": socialPost,
+        "Audio": audio,
+        "Map": map
+  };
 
   return (
     <ul className={styles.cardsContainer}>
@@ -20,7 +37,10 @@ function EvidenceCard(props) {
             </div>
             
           </div>
+          <div>
+          <img src={typeIconsSrc[el.type]}></img>
           <p>{el.type}</p>
+          </div>
           <div className={styles.descriptionContainer}>
             <p className={styles.description}>{el.description}</p>
           </div>
