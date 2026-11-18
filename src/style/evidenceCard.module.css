@@ -29,7 +29,18 @@
 
 .header {
   display: inline-flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content:left;
+    column-gap: 10px;
+}
+
+.header img{
+    max-width: 25px;
 }
 
 .title {
@@ -42,6 +53,11 @@
   margin: 0;
   padding: 5px;
   border-radius: 10px;
+}
+
+.status {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Unverified {
